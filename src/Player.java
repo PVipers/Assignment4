@@ -18,16 +18,16 @@ public class Player {
 	
 	public void setLimit(int limit) {
 		if (limit < 0) throw new IllegalArgumentException("Limit cannot be negative.");
-		if (limit > balance)  throw new IllegalArgumentException("Limit cannot be greater than balance.");
+		if (limit >= balance)  throw new IllegalArgumentException("Limit cannot be greater than balance.");
 		this.limit = limit;
 	}
 
 	public boolean balanceExceedsLimit() {
-		return (balance > limit);
+		return (balance >= limit);
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		return (balance - amount >= limit);
 	}
 	
 	public void takeBet(int bet) {
@@ -42,6 +42,7 @@ public class Player {
                 
 	}
 	
+        @Override
 	public String toString() {
 		return String.format("Player: %s, Balance: %d, Limit: %d", name, balance, limit);
 	}
