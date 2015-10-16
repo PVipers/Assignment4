@@ -2,7 +2,6 @@ import java.util.List;
 import java.io.*;
 
 public class Main {
-    private static Game game;
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -12,26 +11,9 @@ public class Main {
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
-<<<<<<< HEAD
-        Player player = new Player("Rushang", 100);
-        /*=======*/
-
-        Game game;
-        game= new Game(d1, d2, d3);
-=======
-<<<<<<< HEAD
-        Player player = new Player("RamKrishna", 100);
-=======
-<<<<<<< HEAD
-        Player player = new Player("Rushang", 100);
-=======
-        Player player = new Player("Shashi", 100);
->>>>>>> origin/Shashi
->>>>>>> refs/remotes/origin/master
+        Player player = new Player("Fred", 100);
         Game game = new Game(d1, d2, d3);
->>>>>>> refs/remotes/origin/master
-        List<DiceValue> cdv;
-            cdv = game.getDiceValues();
+        List<DiceValue> cdv = game.getDiceValues();
 
         int totalWins = 0;
         int totalLosses = 0;
@@ -43,20 +25,7 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
-<<<<<<< HEAD
-
-            	String name = "Rushang";
-=======
-<<<<<<< HEAD
-            	String name = "RamKrishna";
-=======
-<<<<<<< HEAD
-            	String name = "Rushang";
-=======
-            	String name = "Shashi";
->>>>>>> origin/Shashi
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/master
+            	String name = "Fred";
             	int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);
@@ -76,8 +45,8 @@ public class Main {
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
                 			turn, player.getName(), bet, pick); 
                 	
-                	int winnings = /*game*/.playRound(player, pick, bet);
-                    cdv = /*game*/.getDiceValues();
+                	int winnings = game.playRound(player, pick, bet);
+                    cdv = game.getDiceValues();
                     
                     System.out.printf("Rolled %s, %s, %s\n",
                     		cdv.get(0), cdv.get(1), cdv.get(2));
@@ -104,8 +73,7 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
-            String ans;
-               ans = console.readLine();
+            String ans = console.readLine();
             if (ans.equals("q")) break;
         } //while true
         
