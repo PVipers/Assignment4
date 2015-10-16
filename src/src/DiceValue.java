@@ -5,9 +5,9 @@ import java.util.Random;
 public enum DiceValue {
 	CROWN, ANCHOR, HEART, DIAMOND, CLUB, SPADE;
 	
-	private static final Random RANDOM = new Random();
+	private static Random RANDOM = new Random();
 	
-	private static final Map<DiceValue, String> VALUE_REPR_MAP= new HashMap<>();
+	private static final Map<DiceValue, String> VALUE_REPR_MAP= new HashMap<DiceValue, String>();
 	static {
 		VALUE_REPR_MAP.put(DiceValue.CROWN, "Crown");
 		VALUE_REPR_MAP.put(DiceValue.ANCHOR, "Anchor");
