@@ -9,7 +9,7 @@ public class Player {
 		if (balance < 0) throw new IllegalArgumentException("Balance cannot be negative");
 		this.name = name;
 		this.balance = balance;
-		this.limit = 0;
+		this.limit = 0;//Limit set to 0
 	}
 		
 	public String getName() { return name; }
@@ -18,10 +18,10 @@ public class Player {
 	
 	public void setLimit(int limit) {
 		if (limit < 0) throw new IllegalArgumentException("Limit cannot be negative.");
-		if (limit >= balance)  throw new IllegalArgumentException("Limit cannot be greater than balance.");
+		if (limit >= balance) throw new IllegalArgumentException("Limit cannot be greater than balance.");
 		this.limit = limit;
 	}
-    //if the limit and balance are kept equal to greater one than we can achieve the desried result
+
 	public boolean balanceExceedsLimit() {
 		return (balance >= limit);
 	}
@@ -36,18 +36,19 @@ public class Player {
 		balance = balance - bet;
 	}
 	
-	public void receiveWinnings(int winnings, int bet) {
+	public void receiveWinnings(int winnings,int bet ) 
+        {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
-<<<<<<< HEAD
-		balance += bet + winnings;	
-                
-=======
-		balance = balance + winnings + bet;		
->>>>>>> origin/Shashi
+          
+		balance = balance+bet + winnings;		
 	}
 	
         @Override
 	public String toString() {
-		return String.format("Player: %s, Balance: %d, Limit: %d", name, balance, limit);
+		return String.format("Player: %s, Balance: %d, Limit: %d", name, balance, limit); 
 	}
+
+    void receiveWinnings(int winnings) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

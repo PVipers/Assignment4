@@ -11,18 +11,9 @@ public class Main {
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
-<<<<<<< HEAD
-        Player player = new Player("RamKrishna", 100);
-=======
-<<<<<<< HEAD
-        Player player = new Player("Rushang", 100);
-=======
-        Player player = new Player("Shashi", 100);
->>>>>>> origin/Shashi
->>>>>>> refs/remotes/origin/master
+        Player player = new Player("Fred", 100);
         Game game = new Game(d1, d2, d3);
-        List<DiceValue> cdv;
-            cdv = game.getDiceValues();
+        List<DiceValue> cdv = game.getDiceValues();
 
         int totalWins = 0;
         int totalLosses = 0;
@@ -34,15 +25,7 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
-<<<<<<< HEAD
-            	String name = "RamKrishna";
-=======
-<<<<<<< HEAD
-            	String name = "Rushang";
-=======
-            	String name = "Shashi";
->>>>>>> origin/Shashi
->>>>>>> refs/remotes/origin/master
+            	String name = "Fred";
             	int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);
@@ -54,7 +37,7 @@ public class Main {
                 		player.getName(), player.getBalance(), player.getLimit()));
 
                 int turn = 0;
-                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 250)
+                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
                     turn++;                    
                 	DiceValue pick = DiceValue.getRandom();
@@ -86,16 +69,15 @@ public class Main {
                 
             } //for
             
-            System.out.println(String.format("Win count = %d, Lose Count = %d, %.2f", winCount, loseCount, (float) winCount/(winCount+loseCount)));
+            System.out.println(String.format("Win count = %d, Lose Count = %d, %f", winCount, loseCount, (float) winCount/(winCount+loseCount)));
             totalWins += winCount;
             totalLosses += loseCount;
 
-            String ans;
-               ans = console.readLine();
+            String ans = console.readLine();
             if (ans.equals("q")) break;
         } //while true
         
-        System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
+        System.out.println(String.format("Overall win rate = %0.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
 	}
 
 }
