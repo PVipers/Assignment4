@@ -21,7 +21,7 @@ public class Player {
 		if (limit >= balance)  throw new IllegalArgumentException("Limit cannot be greater than balance.");
 		this.limit = limit;
 	}
-
+    //if the limit and balance are kept equal to greater one than we can achieve the desried result
 	public boolean balanceExceedsLimit() {
 		return (balance >= limit);
 	}
