@@ -1,6 +1,6 @@
 public class Dice {
 			
-	private DiceValue value;
+	private final DiceValue value;
 	
 	public Dice() {
 		value =  DiceValue.getRandom();
@@ -14,6 +14,7 @@ public class Dice {
 		return DiceValue.getRandom();
 	}		
 	
+        @Override
 	public String toString() {
 		return value.toString();
 	}

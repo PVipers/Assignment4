@@ -1,6 +1,5 @@
 import java.util.List;
 import java.io.*;
-import static javax.swing.text.html.HTML.Tag.HEAD;
 
 public class Main {
     private static Game game;
@@ -16,7 +15,8 @@ public class Main {
         Player player = new Player("Rushang", 100);
         /*=======*/
 
-        Game Game game = new Game(d1, d2, d3);
+        Game game;
+        game= new Game(d1, d2, d3);
         List<DiceValue> cdv;
             cdv = game.getDiceValues();
 
@@ -51,8 +51,8 @@ public class Main {
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
                 			turn, player.getName(), bet, pick); 
                 	
-                	int winnings = game.playRound(player, pick, bet);
-                    cdv = game.getDiceValues();
+                	int winnings = /*game*/.playRound(player, pick, bet);
+                    cdv = /*game*/.getDiceValues();
                     
                     System.out.printf("Rolled %s, %s, %s\n",
                     		cdv.get(0), cdv.get(1), cdv.get(2));
