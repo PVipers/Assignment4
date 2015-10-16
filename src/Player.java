@@ -36,11 +36,12 @@ public class Player {
 		balance = balance - bet;
 	}
 	
-	public void receiveWinnings(int winnings) {
+	public void receiveWinnings(int winnings, int bet) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
-		balance = balance + winnings;		
+		balance = balance + winnings + bet;		
 	}
 	
+        @Override
 	public String toString() {
 		return String.format("Player: %s, Balance: %d, Limit: %d", name, balance, limit);
 	}
