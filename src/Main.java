@@ -11,9 +11,10 @@ public class Main {
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
-        Player player = new Player("Fred", 100);
+        Player player = new Player("Rushang", 100);
         Game game = new Game(d1, d2, d3);
-        List<DiceValue> cdv = game.getDiceValues();
+        List<DiceValue> cdv;
+            cdv = game.getDiceValues();
 
         int totalWins = 0;
         int totalLosses = 0;
@@ -25,7 +26,7 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
-            	String name = "Fred";
+            	String name = "Rushang";
             	int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);
@@ -37,7 +38,7 @@ public class Main {
                 		player.getName(), player.getBalance(), player.getLimit()));
 
                 int turn = 0;
-                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
+                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 250)
                 {
                     turn++;                    
                 	DiceValue pick = DiceValue.getRandom();
@@ -73,7 +74,8 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
-            String ans = console.readLine();
+            String ans;
+               ans = console.readLine();
             if (ans.equals("q")) break;
         } //while true
         
