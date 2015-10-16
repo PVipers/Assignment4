@@ -40,11 +40,7 @@ public class Game {
 		int winnings = matches * bet;
 
 		if (matches > 0) {			
-<<<<<<< HEAD
-			player.receiveWinnings(winnings, bet);
-=======
 			player.receiveWinnings(winnings,bet);
->>>>>>> origin/Shashi
 		}
         return winnings;		
 	}
