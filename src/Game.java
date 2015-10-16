@@ -9,18 +9,18 @@ public class Game {
 	
 	public Game(Dice die1, Dice die2, Dice die3) {
 		if (die1 == null || die2 == null || die3 == null) throw new IllegalArgumentException("Dice cannot be null.");
-		dice = new ArrayList<Dice>();
+		dice = new ArrayList<>();
 		dice.add(die1);
 		dice.add(die2);
 		dice.add(die3);
-		values = new ArrayList<DiceValue>();
+		values = new ArrayList<>();
 	}
 
 	public List<DiceValue> getDiceValues() {
 		values.clear();
-		for (Dice d : dice) {
-			values.add(d.getValue());
-		}
+                dice.stream().forEach((d) -> {
+                    values.add(d.getValue());
+            });
 		return Collections.unmodifiableList(values);
 	}	
 	
@@ -32,17 +32,19 @@ public class Game {
 		player.takeBet(bet);
 		    
 		int matches = 0;
-		for ( Dice d : dice) {
-			d.roll();
-			if (d.getValue().equals(pick)) { 
-				matches += 1;
-			}
-		}
+                matches = dice.stream().map((d) -> {
+                    d.roll();
+                return d;
+            }).filter((d) -> (d.getValue().equals(pick))).map((_item) -> 1).reduce(matches, Integer::sum);
 		
 		int winnings = matches * bet;
 
 		if (matches > 0) {			
-			player.receiveWinnings(winnings);
+<<<<<<< HEAD
+			player.receiveWinnings(winnings, bet);
+=======
+			player.receiveWinnings(winnings,bet);
+>>>>>>> origin/Shashi
 		}
         return winnings;		
 	}

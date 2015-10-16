@@ -11,9 +11,18 @@ public class Main {
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
+<<<<<<< HEAD
         Player player = new Player("RamKrishna", 100);
+=======
+<<<<<<< HEAD
+        Player player = new Player("Rushang", 100);
+=======
+        Player player = new Player("Shashi", 100);
+>>>>>>> origin/Shashi
+>>>>>>> refs/remotes/origin/master
         Game game = new Game(d1, d2, d3);
-        List<DiceValue> cdv = game.getDiceValues();
+        List<DiceValue> cdv;
+            cdv = game.getDiceValues();
 
         int totalWins = 0;
         int totalLosses = 0;
@@ -25,7 +34,15 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
+<<<<<<< HEAD
             	String name = "RamKrishna";
+=======
+<<<<<<< HEAD
+            	String name = "Rushang";
+=======
+            	String name = "Shashi";
+>>>>>>> origin/Shashi
+>>>>>>> refs/remotes/origin/master
             	int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);
@@ -73,7 +90,8 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
-            String ans = console.readLine();
+            String ans;
+               ans = console.readLine();
             if (ans.equals("q")) break;
         } //while true
         
