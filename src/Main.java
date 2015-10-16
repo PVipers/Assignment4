@@ -11,7 +11,11 @@ public class Main {
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
+<<<<<<< HEAD
         Player player = new Player("Rushang", 100);
+=======
+        Player player = new Player("Shashi", 100);
+>>>>>>> origin/Shashi
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv;
             cdv = game.getDiceValues();
@@ -26,7 +30,11 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
+<<<<<<< HEAD
             	String name = "Rushang";
+=======
+            	String name = "Shashi";
+>>>>>>> origin/Shashi
             	int balance = 100;
             	int limit = 0;
                 player = new Player(name, balance);

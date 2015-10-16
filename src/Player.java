@@ -38,8 +38,12 @@ public class Player {
 	
 	public void receiveWinnings(int winnings, int bet) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
+<<<<<<< HEAD
 		balance += bet + winnings;	
                 
+=======
+		balance = balance + winnings + bet;		
+>>>>>>> origin/Shashi
 	}
 	
         @Override
